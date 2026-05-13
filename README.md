@@ -20,29 +20,33 @@ NQ AI 프로세서, 8K 업스케일링, AI 사운드 등 주요 기능을 직관
 모든 페이지를 하나로 통합한 **단일 HTML 파일**을 다운로드받아 크롬 등 어떤 브라우저에서도 즉시 실행할 수 있습니다.
 
 > **참고:** 깃허브는 `.html` 파일을 클릭하면 소스 코드 화면을 보여줍니다.
-> 실제 웹페이지로 보려면 아래 안내에 따라 **Raw 파일을 내려받은 뒤 더블클릭**해 주세요.
+> 비공개 저장소에서는 Raw 직접 링크가 동작하지 않을 수 있으므로,
+> 아래 방법대로 **깃허브 UI의 다운로드 버튼**을 사용해 주세요.
 
 ### 다운로드 방법
 
-#### 방법 1. Raw 파일 다운로드 (권장)
+#### 방법 1. 깃허브 UI의 "Download raw file" 버튼 (가장 확실함)
 
-1. 아래 Raw 링크를 클릭합니다.
-   **[▶ samsung-aitv-webapp.html (Raw 보기)](https://raw.githubusercontent.com/vdaistrategy00/cso/claude/samsung-aitv-webpage-H5gP1/Test1/samsung-aitv-webapp.html)**
-2. 브라우저에 HTML 원문이 보이면, 키보드에서 **`Ctrl + S`** (macOS는 `Cmd + S`) 를 눌러 파일을 저장합니다.
-3. 저장한 `samsung-aitv-webapp.html` 파일을 **더블클릭**하면 크롬에서 실제 웹페이지로 열립니다.
+1. 깃허브 저장소에서 `Test1/samsung-aitv-webapp.html` 파일을 클릭합니다.
+2. 파일 보기 화면 **우측 상단**에 있는 버튼 모음에서 **아래쪽 화살표 아이콘 (⬇️ Download raw file)** 을 클릭합니다.
+   - "Raw" 버튼 옆에 있는 다운로드 아이콘입니다.
+   - 마우스를 올리면 "Download raw file" 툴팁이 표시됩니다.
+3. 브라우저가 자동으로 `samsung-aitv-webapp.html` 파일을 저장합니다.
+4. 저장된 파일을 **더블클릭**하면 크롬에서 실제 웹페이지로 열립니다.
 
-#### 방법 2. 우클릭으로 바로 저장
+#### 방법 2. 페이지에서 직접 저장 (Ctrl+S)
 
-1. 깃허브 저장소에서 `Test1/samsung-aitv-webapp.html` 파일로 이동합니다.
-2. 우측 상단의 **"Raw"** 버튼을 우클릭 → **"다른 이름으로 링크 저장"** 을 선택합니다.
-3. 저장된 파일을 더블클릭하여 실행합니다.
+1. 깃허브에서 `Test1/samsung-aitv-webapp.html` 파일을 열어 코드가 표시된 상태로 둡니다.
+2. 키보드의 **`Ctrl + S`** (macOS는 `Cmd + S`) 를 누릅니다.
+3. 파일 형식을 **"웹페이지, HTML만"** 으로 선택하고 저장합니다.
+4. 저장된 파일을 더블클릭하여 실행합니다.
 
-#### 방법 3. git clone으로 전체 받기
+#### 방법 3. git clone으로 전체 받기 (가장 안정적)
 
 ```bash
 git clone https://github.com/vdaistrategy00/cso.git
 cd cso/Test1
-# samsung-aitv-webapp.html 파일을 더블클릭하거나 아래 명령으로 실행
+# 더블클릭하거나 아래 명령으로 실행
 open samsung-aitv-webapp.html      # macOS
 start samsung-aitv-webapp.html     # Windows
 xdg-open samsung-aitv-webapp.html  # Linux
@@ -54,6 +58,10 @@ xdg-open samsung-aitv-webapp.html  # Linux
 
 - 압축 해제, 서버 설치, 인터넷 연결 모두 필요 없습니다 — 단일 파일 안에 5개 페이지와 모든 스타일이 포함되어 있습니다.
 - 상단 네비게이션 메뉴로 5개 페이지(홈 / 제품 특징 / AI 기술 / 모델 비교 / 문의하기)를 자유롭게 이동할 수 있습니다.
+
+> **여전히 다운로드가 안 되시나요?**
+> 저장소가 비공개 상태일 가능성이 높습니다. 깃허브에 로그인한 상태에서 방법 1을 다시 시도하시거나,
+> 가장 확실한 방법 3(git clone)을 이용해 주세요.
 
 ---
 
