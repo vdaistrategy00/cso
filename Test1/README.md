@@ -27,7 +27,7 @@ NQ AI 프로세서, 8K 업스케일링, AI 사운드 등 주요 기능을 직관
 
 #### 방법 1. 깃허브 UI의 "Download raw file" 버튼 (가장 확실함)
 
-1. 깃허브 저장소에서 `Test1/samsung-aitv-webapp.html` 파일을 클릭합니다.
+1. 깃허브 저장소에서 `samsung-aitv-webapp.html` 파일을 클릭합니다. (현재 README와 같은 폴더에 있습니다)
 2. 파일 보기 화면 **우측 상단**에 있는 버튼 모음에서 **아래쪽 화살표 아이콘 (⬇️ Download raw file)** 을 클릭합니다.
    - "Raw" 버튼 옆에 있는 다운로드 아이콘입니다.
    - 마우스를 올리면 "Download raw file" 툴팁이 표시됩니다.
@@ -36,7 +36,7 @@ NQ AI 프로세서, 8K 업스케일링, AI 사운드 등 주요 기능을 직관
 
 #### 방법 2. 페이지에서 직접 저장 (Ctrl+S)
 
-1. 깃허브에서 `Test1/samsung-aitv-webapp.html` 파일을 열어 코드가 표시된 상태로 둡니다.
+1. 깃허브에서 `samsung-aitv-webapp.html` 파일을 열어 코드가 표시된 상태로 둡니다.
 2. 키보드의 **`Ctrl + S`** (macOS는 `Cmd + S`) 를 누릅니다.
 3. 파일 형식을 **"웹페이지, HTML만"** 으로 선택하고 저장합니다.
 4. 저장된 파일을 더블클릭하여 실행합니다.
@@ -99,6 +99,7 @@ xdg-open samsung-aitv-webapp.html  # Linux
 
 ```
 Test1/
+├── README.md                   # 본 문서
 ├── index.html                  # 메인 페이지
 ├── features.html               # 제품 특징
 ├── ai-tech.html                # AI 기술
@@ -115,14 +116,12 @@ Test1/
 ### 방법 1: 파일 직접 열기
 
 ```bash
-cd Test1
-# 브라우저로 index.html을 엽니다
+# 본 폴더(Test1)에서 index.html을 브라우저로 엽니다
 ```
 
 ### 방법 2: 간이 웹서버 사용 (권장)
 
 ```bash
-cd Test1
 python3 -m http.server 8000
 # 브라우저에서 http://localhost:8000 접속
 ```
