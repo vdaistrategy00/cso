@@ -19,23 +19,41 @@ NQ AI 프로세서, 8K 업스케일링, AI 사운드 등 주요 기능을 직관
 
 모든 페이지를 하나로 통합한 **단일 HTML 파일**을 다운로드받아 크롬 등 어떤 브라우저에서도 즉시 실행할 수 있습니다.
 
-### [Samsung AI TV WebApp 다운로드 (.html)](Test1/samsung-aitv-webapp.html)
+> **참고:** 깃허브는 `.html` 파일을 클릭하면 소스 코드 화면을 보여줍니다.
+> 실제 웹페이지로 보려면 아래 안내에 따라 **Raw 파일을 내려받은 뒤 더블클릭**해 주세요.
 
-**사용 방법**
+### 다운로드 방법
 
-1. 위 링크를 우클릭 후 "다른 이름으로 링크 저장"을 선택하여 `samsung-aitv-webapp.html` 파일을 저장합니다.
-2. 저장한 파일을 **더블클릭**하면 크롬 브라우저에서 바로 열립니다.
-3. 압축 해제, 서버 설치, 인터넷 연결 모두 필요 없습니다 — 단일 파일 안에 5개 페이지와 모든 스타일이 포함되어 있습니다.
-4. 상단 네비게이션 메뉴로 5개 페이지(홈 / 제품 특징 / AI 기술 / 모델 비교 / 문의하기)를 자유롭게 이동할 수 있습니다.
+#### 방법 1. Raw 파일 다운로드 (권장)
+
+1. 아래 Raw 링크를 클릭합니다.
+   **[▶ samsung-aitv-webapp.html (Raw 보기)](https://raw.githubusercontent.com/vdaistrategy00/cso/claude/samsung-aitv-webpage-H5gP1/Test1/samsung-aitv-webapp.html)**
+2. 브라우저에 HTML 원문이 보이면, 키보드에서 **`Ctrl + S`** (macOS는 `Cmd + S`) 를 눌러 파일을 저장합니다.
+3. 저장한 `samsung-aitv-webapp.html` 파일을 **더블클릭**하면 크롬에서 실제 웹페이지로 열립니다.
+
+#### 방법 2. 우클릭으로 바로 저장
+
+1. 깃허브 저장소에서 `Test1/samsung-aitv-webapp.html` 파일로 이동합니다.
+2. 우측 상단의 **"Raw"** 버튼을 우클릭 → **"다른 이름으로 링크 저장"** 을 선택합니다.
+3. 저장된 파일을 더블클릭하여 실행합니다.
+
+#### 방법 3. git clone으로 전체 받기
 
 ```bash
-# git clone으로 받는 방법
 git clone https://github.com/vdaistrategy00/cso.git
 cd cso/Test1
-open index.html      # macOS
-start index.html     # Windows
-xdg-open index.html  # Linux
+# samsung-aitv-webapp.html 파일을 더블클릭하거나 아래 명령으로 실행
+open samsung-aitv-webapp.html      # macOS
+start samsung-aitv-webapp.html     # Windows
+xdg-open samsung-aitv-webapp.html  # Linux
 ```
+
+---
+
+### 실행 후 사용법
+
+- 압축 해제, 서버 설치, 인터넷 연결 모두 필요 없습니다 — 단일 파일 안에 5개 페이지와 모든 스타일이 포함되어 있습니다.
+- 상단 네비게이션 메뉴로 5개 페이지(홈 / 제품 특징 / AI 기술 / 모델 비교 / 문의하기)를 자유롭게 이동할 수 있습니다.
 
 ---
 
