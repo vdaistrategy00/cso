@@ -8,6 +8,27 @@
 
 ---
 
+## ⬇️ 웹앱 바로 다운로드
+
+<p align="center">
+  <a href="samsung-aitv-webapp.html?raw=1">
+    <img src="https://img.shields.io/badge/⬇%EF%B8%8E%20WebApp%20Download-.html-1428a0?style=for-the-badge&logo=samsung&logoColor=white" alt="Download WebApp" height="50">
+  </a>
+</p>
+
+<p align="center">
+  <b>위 버튼을 클릭한 뒤,</b> 깃허브 파일 화면의 우측 상단 <b>⬇️ Download raw file</b> 아이콘을 누르면 파일이 저장됩니다.<br>
+  저장된 <code>samsung-aitv-webapp.html</code> 을 <b>더블클릭</b> 하면 크롬에서 바로 실행됩니다.
+</p>
+
+| 다운로드 옵션 | 설명 |
+|--------------|------|
+| 📥 **[웹앱 단일 파일 다운로드](samsung-aitv-webapp.html?raw=1)** | 5페이지가 통합된 단일 HTML 파일 — 더블클릭만으로 실행 |
+| 🌐 **[홈 페이지 보기](index.html)** | 메인 페이지 파일 (개별 페이지 구조 확인용) |
+| 🎨 **[공통 스타일시트](style.css)** | 다섯 페이지가 공유하는 CSS |
+
+---
+
 ## 프로젝트 개요
 
 Samsung AI TV의 핵심 기술과 라인업을 소비자에게 효과적으로 전달하기 위해 제작된 정적 웹사이트입니다.
