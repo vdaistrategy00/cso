@@ -16,23 +16,41 @@
   </a>
 </p>
 
-<p align="center">
-  <b>위 버튼을 클릭하면</b> 깃허브 파일 화면으로 이동합니다.<br>
-  우측 상단 <b>⬇️ Download raw file</b> 아이콘을 누르면 zip이 다운로드됩니다.<br>
-  압축을 푼 뒤 <code>samsung-aitv-webapp.html</code> 을 <b>더블클릭</b> 하면 크롬에서 바로 실행됩니다.
-</p>
+> ⚠️ **반드시 아래 두 가지 방법 중 하나로 받아주세요.**
+> 마크다운 링크를 클릭한 뒤 `Ctrl+S` 로 저장하면 깃허브 페이지의 HTML이 `.zip` 확장자로 저장되어 **압축 파일이 비어 보이는 문제**가 발생합니다.
 
-| 다운로드 | 설명 |
-|---------|------|
-| 📦 **[samsung-aitv-webapp.zip](samsung-aitv-webapp.zip)** | 5페이지가 통합된 단일 HTML 웹앱 (압축 파일) |
+### ✅ 올바른 다운로드 방법
+
+#### 방법 A. 깃허브의 "Download raw file" 버튼 사용 (가장 확실함)
+
+1. 위 다운로드 버튼 또는 [samsung-aitv-webapp.zip](samsung-aitv-webapp.zip) 링크를 클릭합니다.
+2. 깃허브 파일 페이지가 열리면 **우측 상단의 ⬇️ 아이콘 (Download raw file)** 을 클릭합니다.
+   - "Raw" 글자 옆에 있는 다운로드 화살표 아이콘입니다.
+   - 마우스를 올리면 "Download raw file" 툴팁이 표시됩니다.
+3. 진짜 zip 바이너리가 다운로드됩니다.
+4. 압축을 해제하고 `samsung-aitv-webapp.html` 을 더블클릭하세요.
+
+> ❌ Ctrl+S / Cmd+S 로 저장하지 마세요. 페이지 HTML이 저장되어 zip이 비어 보입니다.
+
+#### 방법 B. git clone으로 받기 (가장 안정적)
+
+```bash
+git clone https://github.com/vdaistrategy00/cso.git
+cd cso/Test1
+unzip samsung-aitv-webapp.zip
+# samsung-aitv-webapp.html 을 더블클릭하거나
+open samsung-aitv-webapp.html      # macOS
+start samsung-aitv-webapp.html     # Windows
+xdg-open samsung-aitv-webapp.html  # Linux
+```
 
 ---
 
-### 사용 절차
+### 사용 절차 요약
 
-1. 위 zip 파일을 다운로드합니다.
-2. 압축을 해제합니다.
-3. 안에 있는 `samsung-aitv-webapp.html` 을 더블클릭합니다.
+1. 위 두 방법 중 하나로 `samsung-aitv-webapp.zip` 을 다운로드합니다.
+2. zip 파일을 우클릭 → "압축 풀기" 를 선택합니다.
+3. 추출된 `samsung-aitv-webapp.html` 을 더블클릭합니다.
 4. 크롬에서 5페이지 웹앱이 실행됩니다 — 별도 서버, 인터넷 연결 불필요.
 
 ---
@@ -44,24 +62,14 @@ NQ AI 프로세서, 8K 업스케일링, AI 사운드 등 주요 기능을 직관
 
 ---
 
-## 상세 다운로드 가이드
+## 문제 해결
 
-#### 깃허브 UI에서 받기
+**압축 파일이 비어 보여요**
+→ 깃허브 페이지에서 `Ctrl+S` 로 저장하면 HTML 페이지가 `.zip` 확장자로 저장되어 빈 압축 파일처럼 보입니다.
+파일 페이지 우측 상단의 **⬇️ Download raw file** 아이콘을 사용하거나 `git clone` 으로 받아주세요.
 
-1. 위 다운로드 버튼을 클릭하면 `samsung-aitv-webapp.zip` 파일 페이지로 이동합니다.
-2. 우측 상단의 **⬇️ Download raw file** 아이콘을 클릭하면 zip이 즉시 다운로드됩니다.
-3. 압축을 해제한 뒤 `samsung-aitv-webapp.html` 을 더블클릭하면 크롬에서 실행됩니다.
-
-#### git clone으로 전체 받기
-
-```bash
-git clone https://github.com/vdaistrategy00/cso.git
-cd cso/Test1
-unzip samsung-aitv-webapp.zip
-open samsung-aitv-webapp.html      # macOS
-start samsung-aitv-webapp.html     # Windows
-xdg-open samsung-aitv-webapp.html  # Linux
-```
+**다운로드 자체가 안 돼요**
+→ 비공개 저장소라면 깃허브에 로그인된 상태에서 시도해 주세요. `git clone` 방식이 가장 안정적입니다.
 
 ---
 
