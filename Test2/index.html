@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samsung AI TV — AI로 완성하는 시청 경험</title>
+  <meta name="description" content="삼성 AI TV 데모 소개 페이지. NQ AI 프로세서, 8K 업스케일링, AI 사운드, 맞춤형 시청 경험을 한 페이지에서 만나보세요.">
+  <style>
+    :root {
+      --navy: #1428a0;
+      --blue: #4a90e2;
+      --bg: #05060a;
+      --card: #11131c;
+      --line: rgba(255,255,255,0.08);
+      --muted: #9aa3b2;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+      line-height: 1.65; color: #fff; background: var(--bg);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ---------- Navbar ---------- */
+    .navbar {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 6vw;
+      background: rgba(5,6,10,0.6); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+      transition: padding .3s, background .3s;
+    }
+    .navbar.scrolled { padding: 12px 6vw; background: rgba(5,6,10,0.92); }
+    .logo { font-size: 1.5rem; font-weight: 800; color: var(--blue); letter-spacing: 1px; }
+    .logo span { color: #fff; }
+    .nav-links { display: flex; gap: 30px; list-style: none; }
+    .nav-links a { font-size: .95rem; font-weight: 500; color: #d8dde6; transition: color .25s; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-toggle { display: none; background: none; border: 0; color: #fff; font-size: 1.6rem; cursor: pointer; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: 120px 20px 60px;
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(26,41,128,0.55) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(74,144,226,0.25) 0%, transparent 55%);
+    }
+    .badge {
+      display: inline-block; padding: 8px 18px; margin-bottom: 28px;
+      font-size: .82rem; font-weight: 600; letter-spacing: 1px;
+      border: 1px solid var(--blue); border-radius: 30px; color: var(--blue);
+      background: rgba(74,144,226,0.08);
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.6rem); font-weight: 800; line-height: 1.15;
+      margin-bottom: 22px;
+      background: linear-gradient(90deg, #ffffff 20%, #4a90e2 90%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p { font-size: clamp(1rem, 2vw, 1.3rem); color: var(--muted); max-width: 680px; margin-bottom: 40px; }
+    .cta-group { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .btn {
+      display: inline-block; padding: 15px 38px; border-radius: 32px;
+      font-weight: 600; font-size: 1rem; cursor: pointer; border: 1px solid transparent;
+      transition: transform .25s, box-shadow .25s, background .25s;
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--navy), var(--blue)); color: #fff; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(74,144,226,0.4); }
+    .btn-ghost { background: transparent; border-color: var(--line); color: #fff; }
+    .btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
+
+    /* TV mockup */
+    .tv-mock {
+      margin-top: 70px; width: min(620px, 86vw); aspect-ratio: 16/9;
+      border-radius: 14px; padding: 10px;
+      background: linear-gradient(160deg, #20242f, #0a0c12);
+      box-shadow: 0 40px 90px rgba(0,0,0,0.7), 0 0 0 1px var(--line);
+      position: relative;
+    }
+    .tv-screen {
+      width: 100%; height: 100%; border-radius: 7px; overflow: hidden;
+      background: linear-gradient(120deg, #1a2980, #26d0ce);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .tv-screen::after {
+      content: 'AI 8K'; font-size: clamp(2rem,6vw,4rem); font-weight: 800;
+      color: rgba(255,255,255,0.85); letter-spacing: 4px;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    .tv-mock::after {
+      content: ''; position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
+      width: 120px; height: 14px; border-radius: 0 0 12px 12px;
+      background: linear-gradient(180deg, #20242f, #0a0c12);
+    }
+
+    /* ---------- Sections ---------- */
+    section { padding: 100px 6vw; }
+    .section-head { text-align: center; max-width: 720px; margin: 0 auto 60px; }
+    .section-head h2 { font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 800; margin-bottom: 16px; }
+    .section-head p { color: var(--muted); font-size: 1.05rem; }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+
+    /* Features grid */
+    .grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); max-width: 1100px; margin: 0 auto; }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 34px 28px;
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+    }
+    .card:hover { transform: translateY(-6px); border-color: var(--blue); box-shadow: 0 18px 40px rgba(0,0,0,0.45); }
+    .card .icon {
+      width: 54px; height: 54px; border-radius: 14px; margin-bottom: 20px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+      background: linear-gradient(135deg, rgba(20,40,160,0.4), rgba(74,144,226,0.25)); color: var(--blue);
+    }
+    .card h3 { font-size: 1.3rem; margin-bottom: 12px; }
+    .card p { color: var(--muted); font-size: .98rem; }
+
+    /* Stats */
+    .stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; max-width: 1000px; margin: 0 auto; text-align: center; }
+    .stat .num { font-size: clamp(2.4rem, 5vw, 3.4rem); font-weight: 800; color: var(--blue); }
+    .stat .label { color: var(--muted); font-size: .95rem; margin-top: 6px; }
+
+    /* Comparison table */
+    .table-wrap { max-width: 900px; margin: 0 auto; overflow-x: auto; border-radius: 16px; border: 1px solid var(--line); }
+    table { width: 100%; border-collapse: collapse; min-width: 600px; }
+    th, td { padding: 18px 20px; text-align: center; border-bottom: 1px solid var(--line); }
+    thead th { background: var(--card); font-size: 1.05rem; }
+    tbody td:first-child { text-align: left; color: var(--muted); }
+    tbody tr:hover { background: rgba(74,144,226,0.06); }
+    .highlight { color: var(--blue); font-weight: 700; }
+
+    /* CTA band */
+    .cta-band {
+      max-width: 1000px; margin: 0 auto; text-align: center; padding: 70px 30px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(20,40,160,0.5), rgba(74,144,226,0.25));
+      border: 1px solid var(--line);
+    }
+    .cta-band h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 16px; }
+    .cta-band p { color: #d8dde6; margin-bottom: 30px; }
+
+    /* Footer */
+    footer { padding: 50px 6vw; border-top: 1px solid var(--line); text-align: center; color: var(--muted); }
+    footer .logo { justify-content: center; margin-bottom: 12px; }
+    footer .small { font-size: .82rem; margin-top: 14px; opacity: .7; }
+
+    /* Responsive */
+    @media (max-width: 760px) {
+      .nav-links {
+        position: fixed; top: 64px; right: 0; flex-direction: column; gap: 0;
+        background: rgba(5,6,10,0.97); width: 220px; padding: 10px 0;
+        border-left: 1px solid var(--line); border-bottom: 1px solid var(--line);
+        transform: translateX(110%); transition: transform .3s;
+      }
+      .nav-links.open { transform: none; }
+      .nav-links a { display: block; padding: 14px 24px; }
+      .nav-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">SAMSUNG<span> AI TV</span></div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero">홈</a></li>
+      <li><a href="#features">핵심 기능</a></li>
+      <li><a href="#tech">AI 기술</a></li>
+      <li><a href="#models">모델 비교</a></li>
+      <li><a href="#contact">상담 신청</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="hero">
+    <span class="badge">2026 NEW · NQ AI Gen3</span>
+    <h1>AI가 완성하는<br>새로운 시청 경험</h1>
+    <p>삼성 AI TV는 인공지능이 화질·사운드·사용성을 실시간으로 최적화합니다.<br>당신의 거실을 가장 똑똑한 공간으로 바꿔보세요.</p>
+    <div class="cta-group">
+      <a href="#features" class="btn btn-primary">기능 둘러보기</a>
+      <a href="#contact" class="btn btn-ghost">상담 신청하기</a>
+    </div>
+    <div class="tv-mock"><div class="tv-screen"></div></div>
+  </header>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="section-head reveal">
+      <h2>왜 Samsung AI TV인가</h2>
+      <p>최고의 디스플레이 기술과 NQ AI 프로세서가 결합되어, 어떤 영상도 최상의 품질로 재현합니다.</p>
+    </div>
+    <div class="grid">
+      <div class="card reveal"><div class="icon">◈</div><h3>NQ8 AI Gen3</h3><p>512개의 뉴럴 네트워크가 영상을 장면 단위로 분석해 8K 화질로 업스케일링합니다.</p></div>
+      <div class="card reveal"><div class="icon">♫</div><h3>AI 사운드 +</h3><p>주변 소음과 공간 크기를 감지해 최적의 입체 음향을 자동으로 맞춰줍니다.</p></div>
+      <div class="card reveal"><div class="icon">⚡</div><h3>AI 모션 강화</h3><p>스포츠·액션의 빠른 움직임도 잔상 없이 부드럽고 선명하게 재현합니다.</p></div>
+      <div class="card reveal"><div class="icon">◑</div><h3>AI 밝기 최적화</h3><p>시간대와 조명을 인식해 눈이 편안한 밝기와 색온도로 자동 조정합니다.</p></div>
+      <div class="card reveal"><div class="icon">▣</div><h3>맞춤형 홈 화면</h3><p>시청 습관을 학습해 보고 싶은 콘텐츠를 먼저 추천해 줍니다.</p></div>
+      <div class="card reveal"><div class="icon">⌂</div><h3>스마트싱스 허브</h3><p>집안의 가전을 TV 한 대로 제어하는 통합 스마트홈 허브로 활용됩니다.</p></div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section style="padding-top:40px;">
+    <div class="stats reveal">
+      <div class="stat"><div class="num">8K</div><div class="label">초고해상도 업스케일링</div></div>
+      <div class="stat"><div class="num">512</div><div class="label">뉴럴 네트워크</div></div>
+      <div class="stat"><div class="num">144Hz</div><div class="label">고주사율 게이밍</div></div>
+      <div class="stat"><div class="num">99%</div><div class="label">명암 정밀 제어</div></div>
+    </div>
+  </section>
+
+  <!-- Tech -->
+  <section id="tech">
+    <div class="section-head reveal">
+      <h2>지능형 AI 기술</h2>
+      <p>NQ AI 프로세서가 매 순간 콘텐츠를 분석하여, 보는 것 이상의 경험을 만들어냅니다.</p>
+    </div>
+    <div class="grid">
+      <div class="card reveal"><div class="icon">8K</div><h3>AI 업스케일링</h3><p>저해상도 영상도 8K 수준의 디테일과 질감으로 복원합니다.</p></div>
+      <div class="card reveal"><div class="icon">▦</div><h3>Quantum Matrix Pro</h3><p>정밀한 백라이트 제어로 깊은 블랙과 눈부신 화이트를 동시에 표현합니다.</p></div>
+      <div class="card reveal"><div class="icon">✦</div><h3>Neo Quantum HDR 8K+</h3><p>HDR 콘텐츠를 더욱 풍부한 색감과 명암으로 재현합니다.</p></div>
+    </div>
+  </section>
+
+  <!-- Models -->
+  <section id="models">
+    <div class="section-head reveal">
+      <h2>모델 비교</h2>
+      <p>당신에게 가장 잘 맞는 Samsung AI TV를 찾아보세요.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <thead>
+          <tr><th>항목</th><th class="highlight">Neo QLED 8K</th><th>Neo QLED 4K</th><th>OLED</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>대표 모델</td><td class="highlight">QN900D</td><td>QN95D</td><td>S95D</td></tr>
+          <tr><td>해상도</td><td>7,680 × 4,320</td><td>3,840 × 2,160</td><td>3,840 × 2,160</td></tr>
+          <tr><td>프로세서</td><td>NQ8 AI Gen3</td><td>NQ4 AI Gen2</td><td>NQ4 AI Gen2</td></tr>
+          <tr><td>주사율</td><td>144Hz</td><td>144Hz</td><td>144Hz</td></tr>
+          <tr><td>추천 용도</td><td>홈시어터</td><td>거실 메인</td><td>영화·디자인</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Contact / CTA -->
+  <section id="contact">
+    <div class="cta-band reveal">
+      <h2>지금, AI TV를 경험하세요</h2>
+      <p>간단한 정보를 남겨주시면 가까운 매장과 맞춤 모델을 안내해 드립니다.</p>
+      <form id="leadForm" style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+        <input type="text" id="name" placeholder="이름" required
+          style="padding:14px 18px; border-radius:30px; border:1px solid var(--line); background:rgba(0,0,0,0.3); color:#fff; min-width:160px;">
+        <input type="tel" id="phone" placeholder="연락처 (010-0000-0000)" required
+          style="padding:14px 18px; border-radius:30px; border:1px solid var(--line); background:rgba(0,0,0,0.3); color:#fff; min-width:200px;">
+        <button type="submit" class="btn btn-primary">상담 신청</button>
+      </form>
+      <p id="formMsg" style="margin-top:18px; color:var(--blue); display:none;">✔ 신청이 접수되었습니다. 빠르게 연락드리겠습니다!</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="logo">SAMSUNG<span> AI TV</span></div>
+    <p>AI로 완성하는 시청 경험 — 데모 소개 페이지</p>
+    <p class="small">※ 본 페이지는 학습/데모 목적으로 제작된 비공식 소개 페이지입니다. 모든 상표권은 각 소유자에게 있습니다.</p>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 30);
+    });
+
+    // Mobile menu
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Form
+    document.getElementById('leadForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('formMsg').style.display = 'block';
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
