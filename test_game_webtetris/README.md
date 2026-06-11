@@ -37,7 +37,7 @@
 ## 📁 구성
 
 ```
-test11/
+test_game_webtetris/
 ├── index.html   # 게임 전체 (HTML + CSS + JS, 단일 파일)
 └── README.md    # 이 문서
 ```
