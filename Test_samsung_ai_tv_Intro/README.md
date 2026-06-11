@@ -11,7 +11,7 @@
 ## ⬇️ 웹앱 바로 다운로드
 
 <p align="center">
-  <a href="https://github.com/vdaistrategy00/cso/raw/claude/samsung-aitv-webpage-H5gP1/Test1/samsung-aitv-webapp.html">
+  <a href="https://github.com/vdaistrategy00/cso/raw/claude/samsung-aitv-webpage-H5gP1/Test_samsung_ai_tv_Intro/samsung-aitv-webapp.html">
     <img src="https://img.shields.io/badge/⬇%EF%B8%8E%20WebApp%20Download-.html-1428a0?style=for-the-badge&logo=samsung&logoColor=white" alt="Download WebApp" height="50">
   </a>
 </p>
@@ -24,7 +24,7 @@
 
 | 다운로드 | 설명 |
 |---------|------|
-| 📄 **[samsung-aitv-webapp.html](https://github.com/vdaistrategy00/cso/raw/claude/samsung-aitv-webpage-H5gP1/Test1/samsung-aitv-webapp.html)** | 5페이지가 통합된 단일 HTML 실행 파일 — 더블클릭만으로 실행 |
+| 📄 **[samsung-aitv-webapp.html](https://github.com/vdaistrategy00/cso/raw/claude/samsung-aitv-webpage-H5gP1/Test_samsung_ai_tv_Intro/samsung-aitv-webapp.html)** | 5페이지가 통합된 단일 HTML 실행 파일 — 더블클릭만으로 실행 |
 
 ---
 
@@ -48,7 +48,7 @@ NQ AI 프로세서, 8K 업스케일링, AI 사운드 등 주요 기능을 직관
 
 ```bash
 git clone https://github.com/vdaistrategy00/cso.git
-cd cso/Test1
+cd cso/Test_samsung_ai_tv_Intro
 open samsung-aitv-webapp.html      # macOS
 start samsung-aitv-webapp.html     # Windows
 xdg-open samsung-aitv-webapp.html  # Linux
@@ -89,7 +89,7 @@ xdg-open samsung-aitv-webapp.html  # Linux
 ## 폴더 구조
 
 ```
-Test1/
+Test_samsung_ai_tv_Intro/
 ├── README.md                   # 본 문서
 ├── index.html                  # 메인 페이지
 ├── features.html               # 제품 특징
@@ -107,7 +107,7 @@ Test1/
 ### 방법 1: 파일 직접 열기
 
 ```bash
-# 본 폴더(Test1)에서 index.html을 브라우저로 엽니다
+# 본 폴더(Test_samsung_ai_tv_Intro)에서 index.html을 브라우저로 엽니다
 ```
 
 ### 방법 2: 간이 웹서버 사용 (권장)
